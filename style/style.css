@@ -26,6 +26,11 @@ a {
   height: 100%;
   width: 60%;
 }
+@media only screen and (max-width: 1032px) {
+  .menu ul {
+    width: 100%;
+  }
+}
 .menu ul li {
   list-style-type: none;
 }
@@ -58,7 +63,7 @@ a {
   height: 100%;
   min-height: 100vh;
 }
-#section1 h2 {
+#section1 h1 {
   color: white;
   text-transform: uppercase;
   text-align: center;
@@ -72,9 +77,10 @@ a {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 0;
+  flex-direction: column;
 }
 
-#section2 h3, #section3 h3, #section4 h3, #section5 h3, #section6 h3 {
+#section2 h2, #section3 h2, #section4 h2, #section5 h2, #section6 h2 {
   font-size: 30px;
   text-transform: uppercase;
   text-align: center;
@@ -95,6 +101,11 @@ a {
   justify-content: space-around;
   align-items: center;
 }
+@media only screen and (max-width: 960px) {
+  #section2 .box, #section3 .box {
+    flex-direction: column;
+  }
+}
 #section2 .box .text, #section3 .box .text {
   width: 55%;
   margin-left: 4rem;
@@ -103,9 +114,19 @@ a {
   word-spacing: 4px;
   line-height: 1.2;
 }
+@media only screen and (max-width: 960px) {
+  #section2 .box .text, #section3 .box .text {
+    width: 85%;
+  }
+}
 #section2 .box .container-img, #section3 .box .container-img {
   width: 25%;
   height: 35%;
+}
+@media only screen and (max-width: 960px) {
+  #section2 .box .container-img, #section3 .box .container-img {
+    width: 85%;
+  }
 }
 
 #section3 {
@@ -203,10 +224,10 @@ a {
   min-height: 100vh;
   position: relative;
 }
-#section5 h3 {
+#section5 h2 {
   color: white;
 }
-#section5 h4 {
+#section5 h3 {
   text-transform: uppercase;
   font-size: 26px;
   color: white;
@@ -261,6 +282,11 @@ a {
   letter-spacing: 1px;
   word-spacing: 4px;
   line-height: 1.2;
+}
+@media only screen and (max-width: 960px) {
+  #section6 .text-box p {
+    width: 85%;
+  }
 }
 
 .footer {
