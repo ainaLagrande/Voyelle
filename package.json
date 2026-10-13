@@ -1,7 +1,7 @@
 {
   "name": "voyelle",
   "version": "1.0.0",
-  "main": "index.js",
+  "index": "index.js",
   "scripts": {
   "sass": "sass style/style.scss style/style.css",
   "sass:watch": "sass --watch style/style.scss:style/style.css"
