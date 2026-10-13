@@ -5,18 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Lettre de motivation — Aïna, développeuse web | Voyelle</title>
+    <title>Lettre de motivation la plus motivée au monde</title>
     <meta name="description" content="Découvrez la candidature d'Aïna, développeuse web, à travers un site dédié à Voyelle.">
-
     <link rel="stylesheet" href="style/style.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    >
+    <!-- Font dyslexie -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 
 <body id="top">
@@ -277,7 +275,7 @@
 
             <div class="btn-box">
                 <button id="confetti-btn" type="button">
-                    Bouton qui va potentiellement m'impressionner
+                    Bouton qui va potentiellement t'impressionner
                 </button>
 
                 <p id="confetti-status" class="visually-hidden"
@@ -357,6 +355,107 @@
     >
         <i class="fa-solid fa-angle-up" aria-hidden="true"></i>
     </button>
+
+
+
+    <!-- Filtre d'accessibilté -->
+<div class="accessibility">
+    <button
+        type="button"
+        id="filterToggle"
+        aria-expanded="false"
+        aria-controls="filterPanel"
+    >
+        Accessibilité
+    </button>
+
+    <div id="filterPanel" hidden>
+        <h2>Personnalise ton expérience</h2>
+
+        <div class="filter-list">
+
+            <div class="filter-item">
+                <label>
+                    <input type="radio" name="accessibilityFilter" value="fatigue">
+                    Fatigue visuelle
+                </label>
+                <p class="filter-description" hidden>
+                    Augmente le confort de lecture et réduit les animations
+                    et les transitions visuelles.
+                </p>
+            </div>
+
+            <div class="filter-item">
+                <label>
+                    <input type="radio" name="accessibilityFilter" value="dyslexie">
+                    Dyslexie
+                </label>
+                <p class="filter-description" hidden>
+                    Utilise une police simple, augmente l'espacement
+                    des lettres et améliore la lisibilité des paragraphes.
+                </p>
+            </div>
+
+            <div class="filter-item">
+                <label>
+                    <input type="radio" name="accessibilityFilter" value="mode-nuit">
+                    Mode nuit
+                </label>
+                <p class="filter-description" hidden>
+                    Assombrit les surfaces claires et éclaircit les textes
+                    tout en préservant les couleurs principales du site.
+                </p>
+            </div>
+
+            <div class="filter-item">
+                <label>
+                    <input type="radio" name="accessibilityFilter" value="senior">
+                    Confort de lecture
+                </label>
+                <p class="filter-description" hidden>
+                    Agrandit les textes et améliore l'espacement
+                    pour faciliter la lecture.
+                </p>
+            </div>
+
+            <div class="filter-item">
+                <label>
+                    <input type="radio" name="accessibilityFilter" value="malvoyance">
+                    Malvoyance
+                </label>
+                <p class="filter-description" hidden>
+                    Agrandit fortement les textes et renforce les contrastes
+                    pour faciliter la lecture.
+                </p>
+            </div>
+
+            <div class="filter-item">
+                <label>
+                    <input type="radio" name="accessibilityFilter" value="geste-imprecis">
+                    Geste imprécis
+                </label>
+                <p class="filter-description" hidden>
+                    Agrandit les zones cliquables et espace les commandes.
+                </p>
+            </div>
+
+            <div class="filter-item">
+                <label>
+                    <input type="radio" name="accessibilityFilter" value="epilepsie-photosensible">
+                    Réduction des animations
+                </label>
+                <p class="filter-description" hidden>
+                    Désactive les animations décoratives et les transitions.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+
 
     <script src="script.js"></script>
 

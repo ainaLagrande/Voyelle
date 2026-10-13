@@ -2,6 +2,8 @@
 $primary-color: #3B2E2E;
 $secondary-color: #FCE096;
 
+@import './accessibility.scss';
+
 * {
   padding: 0;
   margin: 0;
@@ -23,15 +25,17 @@ a {
 
 // Navigation
 .menu{
-width: 100%;
-height: 70px;
-background-color: $secondary-color;
+    width: 100%;
+    min-height: 70px;
+    background-color: $secondary-color;
+    display: flex;
+    align-items: center;
     ul{
         display: flex;
         justify-content: space-around;
         align-items: center;
         height: 100%;       
-        width: 60%;
+        width: 80%;
         @media only screen and (max-width:1032px) {
             width: 100%;
         }

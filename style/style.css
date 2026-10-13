@@ -1,3 +1,430 @@
+@charset "UTF-8";
+.accessibility {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 9999;
+}
+.accessibility button {
+  cursor: pointer;
+}
+.accessibility #filterToggle {
+  padding: 12px 16px;
+  border: 2px solid #3B2E2E;
+  border-radius: 8px;
+  background-color: #FCE096;
+  color: #3B2E2E;
+  font-weight: bold;
+}
+.accessibility #filterPanel {
+  width: min(340px, 100vw - 32px);
+  max-height: 70vh;
+  overflow-y: auto;
+  margin-bottom: 12px;
+  padding: 20px;
+  border: 2px solid #FCE096;
+  border-radius: 12px;
+  background-color: #3B2E2E;
+  color: #FCE096;
+}
+.accessibility #filterPanel[hidden] {
+  display: none;
+}
+.accessibility .filter-item {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(252, 224, 150, 0.35);
+}
+.accessibility .filter-item label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+.accessibility .filter-item input {
+  width: 20px;
+  height: 20px;
+  accent-color: #FCE096;
+}
+.accessibility .filter-description {
+  margin: 10px 0 0;
+  padding: 10px;
+  border-left: 3px solid #FCE096;
+  line-height: 1.7;
+  font-size: 0.9rem;
+}
+.accessibility .filter-description[hidden] {
+  display: none;
+}
+
+body.dyslexie p,
+body.dyslexie li,
+body.dyslexie a, body.dyslexie h1, body.dyslexie h2, body.dyslexie h3, body.dyslexie h4,
+body.dyslexie button,
+body.dyslexie label {
+  letter-spacing: 0.04em;
+  word-spacing: 0.12em;
+  line-height: 1.8;
+  font-family: "Andika", sans-serif;
+}
+body.dyslexie p {
+  max-width: 75ch;
+}
+
+body.fatigue *,
+body.fatigue *::before,
+body.fatigue *::after,
+body.epilepsie-photosensible *,
+body.epilepsie-photosensible *::before,
+body.epilepsie-photosensible *::after {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
+body.fatigue div, body.fatigue .card, body.fatigue .modal, body.fatigue .carousel, body.fatigue form,
+body.epilepsie-photosensible div,
+body.epilepsie-photosensible .card,
+body.epilepsie-photosensible .modal,
+body.epilepsie-photosensible .carousel,
+body.epilepsie-photosensible form {
+  font-size: 1.1rem;
+}
+body.fatigue,
+body.epilepsie-photosensible {
+  /* Titres */
+}
+body.fatigue h1,
+body.epilepsie-photosensible h1 {
+  font-size: 3rem;
+}
+body.fatigue h2,
+body.epilepsie-photosensible h2 {
+  font-size: 2.5rem;
+}
+body.fatigue h3,
+body.epilepsie-photosensible h3 {
+  font-size: 2.25rem;
+}
+body.fatigue h4,
+body.epilepsie-photosensible h4 {
+  font-size: 2rem;
+}
+body.fatigue h5,
+body.epilepsie-photosensible h5 {
+  font-size: 1.85rem;
+}
+body.fatigue h6,
+body.epilepsie-photosensible h6 {
+  font-size: 1.5rem;
+}
+body.fatigue li a,
+body.epilepsie-photosensible li a {
+  font-size: 2.25rem;
+}
+body.fatigue button, body.fatigue a, body.fatigue li,
+body.epilepsie-photosensible button,
+body.epilepsie-photosensible a,
+body.epilepsie-photosensible li {
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+}
+body.fatigue p,
+body.epilepsie-photosensible p {
+  font-size: 1.1rem;
+  letter-spacing: 0.1rem;
+  line-height: 1.7rem;
+}
+body.fatigue img,
+body.epilepsie-photosensible img {
+  filter: contrast(85%);
+}
+body.fatigue video,
+body.epilepsie-photosensible video {
+  filter: contrast(85%);
+}
+body.fatigue .progress-bar,
+body.epilepsie-photosensible .progress-bar {
+  font-size: 1.2rem;
+}
+body.fatigue input, body.fatigue textarea, body.fatigue select, body.fatigue button, body.fatigue label, body.fatigue fieldset, body.fatigue legend, body.fatigue optgroup, body.fatigue option,
+body.epilepsie-photosensible input,
+body.epilepsie-photosensible textarea,
+body.epilepsie-photosensible select,
+body.epilepsie-photosensible button,
+body.epilepsie-photosensible label,
+body.epilepsie-photosensible fieldset,
+body.epilepsie-photosensible legend,
+body.epilepsie-photosensible optgroup,
+body.epilepsie-photosensible option {
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+}
+body.fatigue,
+body.epilepsie-photosensible {
+  /* Stopper le contenu animé */
+}
+body.fatigue *,
+body.epilepsie-photosensible * {
+  animation-play-state: paused !important;
+  transition: none !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  body.fatigue *,
+  body.epilepsie-photosensible * {
+    animation-play-state: paused !important;
+    transition: none !important;
+  }
+}
+
+body.senior p,
+body.senior li,
+body.senior a,
+body.senior button,
+body.senior label {
+  font-size: 1.1em;
+  line-height: 1.8;
+}
+
+body.malvoyance p,
+body.malvoyance li,
+body.malvoyance a,
+body.malvoyance button,
+body.malvoyance label {
+  font-size: 1.25em !important;
+  line-height: 1.9 !important;
+}
+body.malvoyance h1 {
+  font-size: 2.8em;
+}
+body.malvoyance h2 {
+  font-size: 2.2em;
+}
+
+body.geste-imprecis a,
+body.geste-imprecis button,
+body.geste-imprecis input,
+body.geste-imprecis select,
+body.geste-imprecis textarea {
+  min-height: 44px;
+  min-width: 44px;
+}
+body.geste-imprecis {
+  /* Texte et conteneurs */
+}
+body.geste-imprecis div, body.geste-imprecis p, body.geste-imprecis form, body.geste-imprecis .card, body.geste-imprecis .modal, body.geste-imprecis .carousel {
+  line-height: 1.6;
+}
+body.geste-imprecis {
+  /* Titres */
+}
+body.geste-imprecis h1, body.geste-imprecis h2, body.geste-imprecis h3, body.geste-imprecis h4, body.geste-imprecis h5, body.geste-imprecis h6 {
+  margin-bottom: 1rem;
+}
+body.geste-imprecis {
+  /* Boutons et liens */
+}
+body.geste-imprecis button, body.geste-imprecis a, body.geste-imprecis li, body.geste-imprecis button > span {
+  padding: 15px 30px;
+  margin: 10px;
+  cursor: pointer;
+}
+body.geste-imprecis {
+  /* Paragraphes */
+}
+body.geste-imprecis p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+body.geste-imprecis {
+  /* Médias */
+}
+body.geste-imprecis img, body.geste-imprecis video {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+body.geste-imprecis {
+  /* Formulaires */
+}
+body.geste-imprecis input, body.geste-imprecis textarea, body.geste-imprecis select {
+  font-size: 1.2rem;
+  padding: 30px;
+  margin: 10px 0;
+}
+body.geste-imprecis {
+  /* Listes */
+}
+body.geste-imprecis ul, body.geste-imprecis ol {
+  margin-bottom: 1rem;
+}
+body.geste-imprecis li {
+  margin-bottom: 0.5rem;
+}
+
+body.mode-nuit {
+  background-color: #211A1A;
+  color: #F5EEE5;
+  /* Navigation : le jaune devient un brun profond */
+}
+body.mode-nuit .menu {
+  background-color: #302626;
+}
+body.mode-nuit .menu ul li a {
+  color: #FCE096;
+}
+body.mode-nuit .menu ul li a:after {
+  background-color: #FCE096;
+}
+body.mode-nuit {
+  /* Sections initialement brunes */
+}
+body.mode-nuit #section1,
+body.mode-nuit #section3,
+body.mode-nuit #section5,
+body.mode-nuit .footer,
+body.mode-nuit .mentions_legales_page .mentions_legales_page_box,
+body.mode-nuit .error404_page {
+  background-color: #211A1A;
+  color: #F5EEE5;
+}
+body.mode-nuit {
+  /* Sections initialement jaunes */
+}
+body.mode-nuit #section2,
+body.mode-nuit #section4,
+body.mode-nuit #section6,
+body.mode-nuit .text-ps {
+  background-color: #302626;
+  color: #F5EEE5;
+}
+body.mode-nuit {
+  /* Titres */
+}
+body.mode-nuit #section2 h2,
+body.mode-nuit #section3 h2,
+body.mode-nuit #section4 h2,
+body.mode-nuit #section5 h2,
+body.mode-nuit #section6 h2,
+body.mode-nuit .mentions_legales_page h2,
+body.mode-nuit .error404_page h2 {
+  color: #FCE096;
+}
+body.mode-nuit #section1 h1,
+body.mode-nuit #section5 h3 {
+  color: #F5EEE5;
+}
+body.mode-nuit {
+  /* Tous les textes des sections */
+}
+body.mode-nuit p,
+body.mode-nuit li,
+body.mode-nuit .text,
+body.mode-nuit .text-box,
+body.mode-nuit .text-ps p {
+  color: #F5EEE5;
+}
+body.mode-nuit {
+  /* Liens */
+}
+body.mode-nuit a {
+  color: #FCE096;
+}
+body.mode-nuit a:hover {
+  color: #FFFFFF;
+}
+body.mode-nuit {
+  /* Bouton de la section Pourquoi moi */
+}
+body.mode-nuit #section5 button {
+  color: #211A1A;
+  background-color: #FCE096;
+  border-color: #FCE096;
+}
+body.mode-nuit #section5 button:hover {
+  color: #FCE096;
+  background-color: #302626;
+}
+body.mode-nuit {
+  /* Bouton remonter en haut */
+}
+body.mode-nuit .arrowUp {
+  background-color: #C9795B;
+  border-color: #C9795B;
+}
+body.mode-nuit .arrowUp .fas::before {
+  color: #211A1A;
+}
+body.mode-nuit {
+  /* Graphiques de compétences */
+}
+body.mode-nuit #section4 circle {
+  stroke: #75615C;
+}
+body.mode-nuit #section4 text {
+  fill: #F5EEE5;
+}
+body.mode-nuit #section4 #aPath {
+  stroke: #65B4C4;
+}
+body.mode-nuit #section4 #bPath {
+  stroke: #E39A7C;
+}
+body.mode-nuit #section4 #cPath {
+  stroke: #A6C58B;
+}
+body.mode-nuit #section4 #dPath {
+  stroke: #C69BC1;
+}
+body.mode-nuit #section4 #ePath {
+  stroke: #91A7ED;
+}
+body.mode-nuit #section4 #fPath {
+  stroke: #E58A8A;
+}
+body.mode-nuit {
+  /* Panneau d'accessibilité */
+}
+body.mode-nuit #filterPanel {
+  background-color: #302626;
+  color: #F5EEE5;
+  border: 1px solid #75615C;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+body.mode-nuit #filterPanel h2,
+body.mode-nuit #filterPanel label {
+  color: #F5EEE5;
+}
+body.mode-nuit #filterPanel .filter-description {
+  color: #D8C9BC;
+}
+body.mode-nuit #filterPanel input {
+  accent-color: #FCE096;
+}
+body.mode-nuit {
+  /* Champs de formulaire, si présents */
+}
+body.mode-nuit input,
+body.mode-nuit textarea,
+body.mode-nuit select {
+  background-color: #211A1A;
+  color: #F5EEE5;
+  border: 1px solid #75615C;
+}
+body.mode-nuit input::placeholder,
+body.mode-nuit textarea::placeholder {
+  color: #D8C9BC;
+}
+body.mode-nuit {
+  /* Focus clavier visible */
+}
+body.mode-nuit a:focus-visible,
+body.mode-nuit button:focus-visible,
+body.mode-nuit input:focus-visible,
+body.mode-nuit textarea:focus-visible,
+body.mode-nuit select:focus-visible {
+  outline: 3px solid #FCE096;
+  outline-offset: 4px;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -16,15 +443,17 @@ a {
 
 .menu {
   width: 100%;
-  height: 70px;
+  min-height: 70px;
   background-color: #FCE096;
+  display: flex;
+  align-items: center;
 }
 .menu ul {
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 100%;
-  width: 60%;
+  width: 80%;
 }
 @media only screen and (max-width: 1032px) {
   .menu ul {

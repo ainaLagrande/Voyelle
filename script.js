@@ -270,3 +270,87 @@ document.querySelectorAll('.reveal').forEach(function(r){
 	observer.observe(r)
 
 })
+
+// Accessibilité
+
+document.addEventListener("DOMContentLoaded", () => {
+    const body = document.body;
+    const toggle = document.getElementById("filterToggle");
+    const panel = document.getElementById("filterPanel");
+
+    const inputs = document.querySelectorAll(
+        'input[name="accessibilityFilter"]'
+    );
+
+    const filterClasses = [
+        "fatigue",
+        "dyslexie",
+        "mode-nuit",
+        "senior",
+        "malvoyance",
+        "geste-imprecis",
+        "epilepsie-photosensible"
+    ];
+
+    function applyFilter(value) {
+        // Retirer les anciennes classes
+        body.classList.remove(...filterClasses);
+
+        // Masquer toutes les descriptions
+        document.querySelectorAll(".filter-description").forEach(desc => {
+            desc.hidden = true;
+        });
+
+        // Appliquer le nouveau filtre
+        if (filterClasses.includes(value)) {
+            body.classList.add(value);
+
+            const selected = document.querySelector(
+                `input[name="accessibilityFilter"][value="${value}"]`
+            );
+
+            if (selected) {
+                const description = selected
+                    .closest(".filter-item")
+                    .querySelector(".filter-description");
+
+                description.hidden = false;
+            }
+
+            localStorage.setItem("accessibilityFilter", value);
+        } else {
+            localStorage.removeItem("accessibilityFilter");
+        }
+    }
+
+    toggle.addEventListener("click", () => {
+        panel.hidden = !panel.hidden;
+        toggle.setAttribute("aria-expanded", String(!panel.hidden));
+    });
+
+  inputs.forEach(input => {
+      input.addEventListener("click", () => {
+          const isAlreadySelected = body.classList.contains(input.value);
+
+          if (isAlreadySelected) {
+              input.checked = false;
+              applyFilter(null);
+          } else {
+              applyFilter(input.value);
+          }
+      });
+  });
+
+    // Restaurer le filtre précédent
+    const savedFilter = localStorage.getItem("accessibilityFilter");
+
+    if (filterClasses.includes(savedFilter)) {
+        const input = [...inputs].find(item => item.value === savedFilter);
+
+        if (input) {
+            input.checked = true;
+            applyFilter(savedFilter);
+        }
+    }
+});
+

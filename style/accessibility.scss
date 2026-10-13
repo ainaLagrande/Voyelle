@@ -1,0 +1,398 @@
+// Accessilibilité 
+
+.accessibility {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    z-index: 9999;
+
+    button {
+        cursor: pointer;
+    }
+
+    #filterToggle {
+        padding: 12px 16px;
+        border: 2px solid $primary-color;
+        border-radius: 8px;
+        background-color: $secondary-color;
+        color: $primary-color;
+        font-weight: bold;
+    }
+
+    #filterPanel {
+        width: min(340px, calc(100vw - 32px));
+        max-height: 70vh;
+        overflow-y: auto;
+        margin-bottom: 12px;
+        padding: 20px;
+        border: 2px solid $secondary-color;
+        border-radius: 12px;
+        background-color: $primary-color;
+        color: $secondary-color;
+
+        &[hidden] {
+            display: none;
+        }
+    }
+
+    .filter-item {
+        padding: 12px 0;
+        border-bottom: 1px solid rgb(252 224 150 / 35%);
+
+        label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+
+        input {
+            width: 20px;
+            height: 20px;
+            accent-color: $secondary-color;
+        }
+    }
+
+    .filter-description {
+        margin: 10px 0 0;
+        padding: 10px;
+        border-left: 3px solid $secondary-color;
+        line-height: 1.7;
+        font-size: 0.9rem;
+
+        &[hidden] {
+            display: none;
+        }
+    }
+}
+
+// DYSLEXIE : toutes les sections de la page
+body.dyslexie {
+    p,
+    li,
+    a,h1,h2,h3,h4,
+    button,
+    label {
+        letter-spacing: 0.04em;
+        word-spacing: 0.12em;
+        line-height: 1.8;
+        font-family: "Andika", sans-serif;
+    }
+
+    p {
+        max-width: 75ch;
+    }
+}
+
+// FATIGUE VISUELLE
+body.fatigue,
+body.epilepsie-photosensible {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+       div, .card, .modal, .carousel, form {
+      font-size: 1.1rem;
+    }
+    /* Titres */
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.5rem; }
+    h3 { font-size: 2.25rem; }
+    h4 { font-size: 2rem; }
+    h5 { font-size: 1.85rem; }
+    h6 { font-size: 1.5rem; }
+    li a { font-size: 2.25rem; }
+    
+    button, a,li {
+      font-size: 1.5rem;
+      letter-spacing: 0.1rem;
+    }
+    p {
+      font-size: 1.1rem;
+      letter-spacing: 0.1rem;
+      line-height: 1.7rem;
+    }
+    img {
+      filter: contrast(85%);
+    }
+    video {
+      filter: contrast(85%);
+    }  
+    .progress-bar {
+      font-size: 1.2rem;
+    }
+    input, textarea, select, button, label, fieldset, legend, optgroup, option{
+      font-size: 1.2rem;
+      letter-spacing: 0.1rem;
+    }
+    /* Stopper le contenu animé */
+    * {
+      animation-play-state: paused !important;
+      transition: none !important;
+    }
+  
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-play-state: paused !important;
+        transition: none !important;
+      }
+    }
+}
+
+// CONFORT DE LECTURE
+body.senior {
+    p,
+    li,
+    a,
+    button,
+    label {
+        font-size: 1.1em;
+        line-height: 1.8;
+    }
+}
+
+// MALVOYANCE
+body.malvoyance {
+    p,
+    li,
+    a,
+    button,
+    label {
+        font-size: 1.25em!important;
+        line-height: 1.9!important;
+    }
+
+    h1 {
+        font-size: 2.8em;
+    }
+
+    h2 {
+        font-size: 2.2em;
+    }
+}
+
+// GESTES IMPRÉCIS
+body.geste-imprecis {
+    a,
+    button,
+    input,
+    select,
+    textarea {
+        min-height: 44px;
+        min-width: 44px;
+    }
+     /* Texte et conteneurs */
+    div, p, form, .card, .modal, .carousel {
+      line-height: 1.6;
+    }
+  
+    /* Titres */
+    h1, h2, h3, h4, h5, h6 {
+      margin-bottom: 1rem;
+    }
+  
+    /* Boutons et liens */
+    button, a, li  , button>span{
+      padding: 15px 30px; 
+      margin: 10px; 
+      cursor: pointer;
+    }
+  
+    /* Paragraphes */
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+  
+    /* Médias */
+    img, video {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+  
+    /* Formulaires */
+    input, textarea, select {
+      font-size: 1.2rem;
+      padding: 30px; 
+      margin: 10px 0;
+    }
+  
+    /* Listes */
+    ul, ol {
+      margin-bottom: 1rem;
+    }
+  
+    li {
+      margin-bottom: 0.5rem;
+    }
+}
+
+// MODE NUIT 
+
+body.mode-nuit {
+    $night-bg: #211A1A;
+    $night-surface: #302626;
+    $night-text: #F5EEE5;
+    $night-muted: #D8C9BC;
+    $night-accent: #FCE096;
+    $night-border: #75615C;
+
+    background-color: $night-bg;
+    color: $night-text;
+
+    /* Navigation : le jaune devient un brun profond */
+    .menu {
+        background-color: $night-surface;
+
+        ul li a {
+            color: $night-accent;
+
+            &:after {
+                background-color: $night-accent;
+            }
+        }
+    }
+
+    /* Sections initialement brunes */
+    #section1,
+    #section3,
+    #section5,
+    .footer,
+    .mentions_legales_page .mentions_legales_page_box,
+    .error404_page {
+        background-color: $night-bg;
+        color: $night-text;
+    }
+
+    /* Sections initialement jaunes */
+    #section2,
+    #section4,
+    #section6,
+    .text-ps {
+        background-color: $night-surface;
+        color: $night-text;
+    }
+
+    /* Titres */
+    #section2 h2,
+    #section3 h2,
+    #section4 h2,
+    #section5 h2,
+    #section6 h2,
+    .mentions_legales_page h2,
+    .error404_page h2 {
+        color: $night-accent;
+    }
+
+    #section1 h1,
+    #section5 h3 {
+        color: $night-text;
+    }
+
+    /* Tous les textes des sections */
+    p,
+    li,
+    .text,
+    .text-box,
+    .text-ps p {
+        color: $night-text;
+    }
+
+    /* Liens */
+    a {
+        color: $night-accent;
+    }
+
+    a:hover {
+        color: #FFFFFF;
+    }
+
+    /* Bouton de la section Pourquoi moi */
+    #section5 button {
+        color: $night-bg;
+        background-color: $night-accent;
+        border-color: $night-accent;
+
+        &:hover {
+            color: $night-accent;
+            background-color: $night-surface;
+        }
+    }
+
+    /* Bouton remonter en haut */
+    .arrowUp {
+        background-color: #C9795B;
+        border-color: #C9795B;
+
+        .fas::before {
+            color: #211A1A;
+        }
+    }
+
+    /* Graphiques de compétences */
+    #section4 {
+        circle {
+            stroke: #75615C;
+        }
+
+        text {
+            fill: $night-text;
+        }
+
+        #aPath { stroke: #65B4C4; }
+        #bPath { stroke: #E39A7C; }
+        #cPath { stroke: #A6C58B; }
+        #dPath { stroke: #C69BC1; }
+        #ePath { stroke: #91A7ED; }
+        #fPath { stroke: #E58A8A; }
+    }
+
+    /* Panneau d'accessibilité */
+    #filterPanel {
+        background-color: $night-surface;
+        color: $night-text;
+        border: 1px solid $night-border;
+        box-shadow: 0 8px 24px rgb(0 0 0 / 30%);
+
+        h2,
+        label {
+            color: $night-text;
+        }
+
+        .filter-description {
+            color: $night-muted;
+        }
+
+        input {
+            accent-color: $night-accent;
+        }
+    }
+
+    /* Champs de formulaire, si présents */
+    input,
+    textarea,
+    select {
+        background-color: $night-bg;
+        color: $night-text;
+        border: 1px solid $night-border;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+        color: $night-muted;
+    }
+
+    /* Focus clavier visible */
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible,
+    select:focus-visible {
+        outline: 3px solid $night-accent;
+        outline-offset: 4px;
+    }
+}
